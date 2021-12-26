@@ -36,6 +36,20 @@ public class TestDeviceCollectionDataService {
     }
 
     @Test
+    public void queryByNativeSQL(){
+        String sql = "select * from device_collection_data where data_key='CO'";
+        System.out.println(service.getEntitiesBySQL(sql));
+    }
+
+    @Test
+    public void queryByNativeSQLNoWrap(){
+        String sql = "select * from device_collection_data where data_key='CO'";
+        System.out.println(service.getBySQLNoWrap(sql));
+    }
+
+
+
+    @Test
     public void create(){
         Date now = new Date();
         String deviceId = "device-2345678901";

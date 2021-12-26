@@ -50,7 +50,7 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <scope>provider</scope>
+            <scope>provided</scope>
         </dependency>
 
         <dependency>
