@@ -1,6 +1,5 @@
 package com.tom.db.service.aop;
 
-import com.tom.db.service.tool.AccessAspect;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.AfterThrowing;
