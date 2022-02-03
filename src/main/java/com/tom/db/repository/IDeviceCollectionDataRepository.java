@@ -4,7 +4,7 @@ import com.tom.db.entity.DeviceCollectionData;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-@Repository
+@Repository(value = "deviceCollectionDataRepository")
 public interface IDeviceCollectionDataRepository extends JpaRepository<DeviceCollectionData, Long> {
 
 //    @Query(nativeQuery=true, value="SELECT * FROM device_collection_data entity WHERE entity.create_date = ?1")

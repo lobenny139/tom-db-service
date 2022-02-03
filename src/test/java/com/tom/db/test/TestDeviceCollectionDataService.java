@@ -1,6 +1,8 @@
 package com.tom.db.test;
 
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.tom.db.entity.DeviceCollectionData;
 import com.tom.db.service.IDeviceCollectionDataService;
 import org.junit.Test;
@@ -31,7 +33,7 @@ public class TestDeviceCollectionDataService {
 
     @Test
     public void query(){
-        long id = 160;
+        long id = 1600;
         System.out.println(service.getEntityById(id));
     }
 
@@ -101,6 +103,25 @@ public class TestDeviceCollectionDataService {
         entity.setDataKey("PM10");
         entity.setDataValue("7.0");
         System.out.println(service.createEntity(entity));
+    }
+
+    @Test
+    public void testConvert2Json() throws JsonProcessingException {
+        Date now = new Date();
+        String deviceId = "device-2345678901";
+        DeviceCollectionData entity = new DeviceCollectionData();
+        long id = 123;
+
+        entity.setCreateDate(now);
+        entity.setDeviceId(deviceId);
+        entity.setDataKey("CO");
+        entity.setDataValue("1.0");
+//        System.out.println(entity.toString());
+//        System.out.println(new ObjectMapper().writeValueAsString(entity));
+        String json = new ObjectMapper().writeValueAsString(entity);
+        DeviceCollectionData entity2 = new ObjectMapper().readValue(json, DeviceCollectionData.class);
+
+        System.out.println(entity2.getDataKey());
     }
 
 }

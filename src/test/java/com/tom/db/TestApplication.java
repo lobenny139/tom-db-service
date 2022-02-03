@@ -13,7 +13,10 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 })
 
 @Import({
-        com.tom.db.beanServiceConfig.ServiceAccessConfig.class
+        //local
+        com.tom.db.beanServiceConfig.ServiceAccessConfig.class,
+        //redis
+        com.tom.redis.beanServiceConfig.ServiceAccessConfig.class
 })
 
 @EnableJpaRepositories(basePackages = {
