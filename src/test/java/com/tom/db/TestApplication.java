@@ -9,7 +9,10 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
 @ComponentScan(basePackages = {
-        "com.tom.db.service.provider"
+        //local
+        "com.tom.db.service.provider",
+        //redis
+        "com.tom.cache.service.provider"
 })
 
 @Import({

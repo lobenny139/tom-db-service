@@ -28,12 +28,13 @@ import static org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTest
 public class TestDeviceCollectionDataService {
 
     @Autowired(required=true)
-    @Qualifier("deviceCollectionDataService")
+//    @Qualifier("deviceCollectionDataService")
+    @Qualifier("deviceCollectionDataDBAndCacheService")
     private IDeviceCollectionDataService service;
 
     @Test
     public void query(){
-        long id = 1600;
+        long id = 215;
         System.out.println(service.getEntityById(id));
     }
 

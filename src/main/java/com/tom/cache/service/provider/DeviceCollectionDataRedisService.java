@@ -1,4 +1,4 @@
-package com.tom.db.service.provider;
+package com.tom.cache.service.provider;
 
 import com.tom.redis.service.provider.GenericRedisService;
 import lombok.Getter;
