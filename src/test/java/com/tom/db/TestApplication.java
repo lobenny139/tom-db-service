@@ -11,23 +11,25 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @ComponentScan(basePackages = {
         //local
         "com.tom.db.service.provider",
-        //redis
+        //tom-redis-service
         "com.tom.cache.service.provider"
 })
 
 @Import({
         //local
         com.tom.db.beanServiceConfig.ServiceAccessConfig.class,
-        //redis
+        //tom-redis-service
         com.tom.redis.beanServiceConfig.ServiceAccessConfig.class
 })
 
 @EnableJpaRepositories(basePackages = {
+        //local
         "com.tom.db.repository"
 })
 
 @EntityScan(basePackages = {
-        "com.tom.db.entity"					// @tom-db-entity
+        // @tom-db-entity
+        "com.tom.db.entity"
 })
 
 public class TestApplication {
