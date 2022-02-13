@@ -37,20 +37,20 @@
             <groupId>com.tom.db.service.tool</groupId>
             <artifactId>tom-db-service-tool</artifactId>
             <version>1.0.0-SNAPSHOT</version>
-<!--            <scope>provided</scope>-->
+            <scope>provided</scope>
         </dependency>
 
         <dependency>
             <groupId>com.tom.db.entity</groupId>
             <artifactId>tom-db-entity</artifactId>
             <version>1.0.0-SNAPSHOT</version>
-<!--            <scope>provided</scope>-->
+            <scope>provided</scope>
         </dependency>
 
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-<!--            <scope>provided</scope>-->
+            <scope>provided</scope>
         </dependency>
 
         <!-- add data record into redis -->
@@ -73,6 +73,7 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
 
         <dependency>
             <groupId>org.junit.vintage</groupId>

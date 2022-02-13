@@ -39,7 +39,7 @@ public class EntityAccessAspect {
         String clazzName = joinPoint.getSignature().getDeclaringTypeName();
         String methodName = joinPoint.getSignature().getName();
 
-        if( methodName.toLowerCase().indexOf("get") >= 0 || "getAllEntitys".equals(methodName) || "getEntityById".equals(methodName) || "getEntitysBySQL".equals(methodName) || methodName.indexOf("exists") >= 0){
+        if( methodName.toLowerCase().indexOf("find") >= 0 || methodName.toLowerCase().indexOf("get") >= 0 || "getAllEntitys".equals(methodName) || "getEntityById".equals(methodName) || "getEntitysBySQL".equals(methodName) || methodName.indexOf("exists") >= 0){
             logger.info("[{}] - [{}] 開始 SQL 查詢, 查詢參數" + Arrays.toString(joinPoint.getArgs()) , clazzName, methodName);
             object = joinPoint.proceed();
             //logger.info(object.getClass().getCanonicalName());
