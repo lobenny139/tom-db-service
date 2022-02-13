@@ -37,9 +37,16 @@ public class TestStockDataService {
 
 
     @Test
-    public void testDesc(){
+    public void testDecr(){
         String prodId = "prod-1234";
-        System.out.println(service.desc(prodId));
+        System.out.println(service.update(prodId));
+    }
+
+    @Test
+    public void testUpdate(){
+        String prodId = "prod-1234";
+        int rest = 3;
+        service.update(prodId, rest);
     }
 
 }

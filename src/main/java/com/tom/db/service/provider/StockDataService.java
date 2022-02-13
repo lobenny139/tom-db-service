@@ -32,17 +32,27 @@ public class StockDataService extends EntityService<StockData, Long> implements 
 
     @Override
     @Transactional
-    public int desc(String productId){
+    public int update(String productId){
         try {
-            getRepository().updateRest(productId);
+            getRepository().updateStockData(productId);
             return getRepository().findByProductId(productId).getRest();
         }catch(Exception e){
             e.printStackTrace();
             throw new RuntimeException(e);
         }
-
-
-
     }
+
+    @Override
+    @Transactional
+    public boolean update(String productId, int rest){
+        try {
+            getRepository().updateStockData(productId, rest);
+            return true;
+        }catch(Exception e){
+            e.printStackTrace();
+            throw new RuntimeException(e);
+        }
+    }
+
 
 }

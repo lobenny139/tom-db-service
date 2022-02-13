@@ -5,5 +5,7 @@ import com.tom.db.service.tool.IEntityService;
 
 public interface IStockDataService extends IEntityService<StockData,Long> {
 
-    public int desc(String productId);
+    public int update(String productId);
+
+    public boolean update(String productId, int rest);
 }

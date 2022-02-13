@@ -32,6 +32,7 @@ public class Test控管領獎 {
 
     @Test
     public void ThreadTest() throws InterruptedException {
+        service.update("prod-1234", 10);
         for(int i = 0; i <= 10000; i++){
             new Thread(new MyThread(System.currentTimeMillis())).start();
         }
@@ -47,7 +48,7 @@ public class Test控管領獎 {
         public void run() {
             long left;
             long endTime = System.currentTimeMillis();
-            if( (left=service.desc("prod-1234")) >= 0){
+            if( (left = service.update("prod-1234")) >= 0){
                 System.out.println(Thread.currentThread().getName() + " 在 " + simpleDateFormat.format(new Date(startTime)) + " 參加領獎, 在 " + simpleDateFormat.format(new Date(endTime) ) +   " 領到, 剩" + left +"個, 耗時 " +  (endTime - startTime) + "ms <<<<<<<<" )  ;
             }
             else{
