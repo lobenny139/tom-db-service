@@ -26,7 +26,7 @@ public class EntityAccessAspect {
     /**
      * 該package 下所有class,method都被攔截
      */
-    @Pointcut("execution(* com.tom.db.service.provider..*(..))")
+    @Pointcut("execution(* com.tom.db.service.provider..*(..)) || execution(* com.tom.db.service.tool..*(..))")
     public void pointcut() { }
 
     @Around("pointcut()")
