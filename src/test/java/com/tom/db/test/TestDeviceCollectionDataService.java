@@ -28,8 +28,8 @@ import static org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTest
 public class TestDeviceCollectionDataService {
 
     @Autowired(required=true)
-//    @Qualifier("deviceCollectionDataService")
-    @Qualifier("deviceCollectionDataDBAndCacheService")
+    @Qualifier("deviceCollectionDataService")
+//    @Qualifier("deviceCollectionDataDBAndCacheService")
     private IDeviceCollectionDataService service;
 
     @Test
